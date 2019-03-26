@@ -1,11 +1,32 @@
 console.log("monkey.js loaded");
-/*Work with a partner to create a monkey object, which has the following properties:
+/*Work with a partner to create a monkey object, which has the following properties:*/
 
-* name
-* species
-* foodsEaten
+var monkey = function ( name , species) {
 
-And the following methods:
+    this.name= name;
+    this.species=species;
+    this.foodsEaten= [];
+};
+
+monkey.prototype.eatSomething = function(food) {
+    this.foodsEaten.push(food)
+  }
+ 
+  Monkey.prototype.introduce = function(){
+    console.log(`Hi,my name is ${this.name} and i am ${this.species} and i love eating ${this.foodsEaten.join()}`)
+}
+
+var monkeyOne = new Monkey('hiko','Japanese macaque')
+monkeyOne.eatSomething('mature leaves')
+monkeyOne.introduce()
+var monkeyTow = new Monkey('ponma','Bonnet macaque')
+monkeyTow.eatSomething('flowers')
+monkeyTow.introduce()
+var monkeyThree = new Monkey('jack','Common squirrel monkey')
+monkeyThree.eatSomething('banana')
+monkeyThree.introduce()
+
+/*And the following methods:
 * eatSomething(thingAsString)
 * introduce: produces a string introducing itself, including its name, species, and what it's eaten.
 
